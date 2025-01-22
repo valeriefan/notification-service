@@ -24,7 +24,7 @@ public class NotifyingFunctionsIntegrationTests {
     }
 
     @Test
-    void labelOrder() {
+    void notifyBooking() {
         Function<Flux<Long>, Flux<BookingNotifiedMessage>> label = catalog.lookup(Function.class, "notified");
         Flux<Long> orderId = Flux.just(121L);
 
@@ -35,7 +35,7 @@ public class NotifyingFunctionsIntegrationTests {
     }
 
     @Test
-    void packAndLabelOrder() {
+    void prepareAndNotifyBooking() {
         Function<BookingAcceptedMessage, Flux<BookingNotifiedMessage>>
                 packAndLabel = catalog.lookup(
                 Function.class,

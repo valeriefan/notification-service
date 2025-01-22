@@ -22,22 +22,20 @@ ext {
 }
 
 dependencies {
-    //implementation 'org.springframework.boot:spring-boot-starter'
-    //implementation 'org.springframework.cloud:spring-cloud-function-context'
     implementation 'org.springframework.cloud:spring-cloud-starter-config'
-    implementation 'org.springframework.cloud:spring-cloud-stream-binder-rabbit'
     implementation 'org.springframework.retry:spring-retry'
-
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'io.projectreactor:reactor-test'
-    testImplementation("org.springframework.cloud:spring-cloud-stream") {
+    implementation 'org.springframework.cloud:spring-cloud-stream-binder-rabbit'
+    testImplementation("org.springframework.cloud:spring-cloud-stream:3.2.0") {
         artifact {
             name = "spring-cloud-stream"
             extension = "jar"
-            type ="test-jar"
             classifier = "test-binder"
         }
     }
+
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
 }
 
 dependencyManagement {

@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dispatcher-service
+  name: notification-service
   labels:
-    app: dispatcher-service
+    app: notification-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: dispatcher-service
+      app: notification-service
   template:
     metadata:
       labels:
-        app: dispatcher-service
+        app: notification-service
     spec:
       containers:
-        - name: dispatcher-service
-          image: dispatcher-service
+        - name: notification-service
+          image: notification-service
           imagePullPolicy: IfNotPresent
           lifecycle:
             preStop:
@@ -28,4 +28,4 @@ spec:
             - name: SPRING_CLOUD_CONFIG_URI
               value: http://config-service
             - name: SPRING_RABBITMQ_HOST
-              value: polar-rabbitmq
+              value: rentsphere-rabbitmq

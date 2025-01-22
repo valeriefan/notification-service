@@ -3,7 +3,7 @@ on: push
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: valeriefan/catalog-service
+  IMAGE_NAME: valeriefan/notification-service
   VERSION: latest
 
 jobs:

@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: dispatcher-service
+  name: notification-service
   labels:
-    app: dispatcher-service
+    app: notification-service
 spec:
   type: ClusterIP
   selector:
-    app: dispatcher-service
+    app: notification-service
   ports:
   - protocol: TCP
     port: 80

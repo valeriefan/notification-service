@@ -1,9 +1,6 @@
 # Dispatcher Service
 
-This application is part of the Polar Bookshop system and provides the functionality for dispatching orders.
-It's part of the project built in the [Cloud Native Spring in Action](https://www.manning.com/books/cloud-native-spring-in-action) book
-by [Thomas Vitale](https://www.thomasvitale.com).
-
+This application is part of the RentSphere system and provides the functionality for notifying bookings.
 ## Useful Commands
 
 | Gradle Command	         | Description                                   |
@@ -17,5 +14,5 @@ by [Thomas Vitale](https://www.thomasvitale.com).
 After building the application, you can also run it from the Java CLI:
 
 ```bash
-java -jar build/libs/dispatcher-service-0.0.1-SNAPSHOT.jar
+java -jar build/libs/notification-service-0.0.1-SNAPSHOT.jar
 ```

@@ -1,7 +1,7 @@
 # Build
 custom_build(
     # Name of the container image
-    ref = 'dispatcher-service',
+    ref = 'notification-service',
     # Command to build the container image
     # On Windows, replace $EXPECTED_REF with %EXPECTED_REF%
     command = './gradlew bootBuildImage --imageName $EXPECTED_REF',
@@ -13,4 +13,4 @@ custom_build(
 k8s_yaml(['k8s/deployment.yml', 'k8s/service.yml'])
 
 # Manage
-k8s_resource('dispatcher-service', port_forwards=['9003'])
+k8s_resource('notification-service', port_forwards=['9003'])
