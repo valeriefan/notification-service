@@ -1,0 +1,22 @@
+server:
+  port: 9003
+
+spring:
+  application:
+    name: notification-service
+  cloud:
+    function:
+      definition: prepared|notified
+    stream:
+      bindings:
+        preparednotified-in-0:
+          destination: booking-accepted
+          group: ${spring.application.name}
+        preparednotified-out-0:
+          destination: booking-notified
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: password
+    connection-timeout: 5s
